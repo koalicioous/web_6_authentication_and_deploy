@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { TaskInput } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../firebase/config";
+import { auth, db } from "../../firebase/config";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export const AddTodoList = () => {
   const navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
 
   const [task, setTask] = useState({
     heading: "",
@@ -27,6 +29,7 @@ export const AddTodoList = () => {
     // task baru
     const newTask = {
       id: Date.now(),
+      userId: user.uid,
       heading: task.heading,
       description: task.description,
       createdAt: Date.now(),
@@ -44,6 +47,13 @@ export const AddTodoList = () => {
   const isFormValid =
     task.heading.trim() !== "" && task.description.trim() !== "";
 
+  if (error) {
+    return <h1>Error: {error}</h1>;
+  }
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div className="m-12 rounded-lg bg-white p-6 shadow-md">
       <h2 className="mb-4 text-xl font-semibold">Add New Task</h2>
