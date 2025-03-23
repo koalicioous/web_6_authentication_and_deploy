@@ -1,4 +1,4 @@
-# Hello Member Web Development GDGOC Telkom University Bandung! 👋
+# Hello Member Web Development GDGOC Telkom University Bandung! 👋👋
 
 sebelumnya kalian bisa `git clone https://github.com/GDGoCTelu/study-group-6-Web-Developement-React-with-Tailwind.git` pada cmd kalian, agar kode ini dapat di jalankan di komputer/laptop kalian, jika mengalami kendala, kalian bisa menonton video tutorial berikut : [Tonton Disini](https://www.youtube.com/watch?v=EhxPBMQFCaI)
 
@@ -17,3 +17,5 @@ jika kalian ingin membuat project react dengan tailwind kalian sendiri, kalian b
 jika ada yang mau ditanyakan, bisa bertanya melalui discord GDGOC member pada channel #web-chat
 
 **Semangat Guys!**
+
+Deployment Test
